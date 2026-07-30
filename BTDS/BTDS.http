@@ -1,0 +1,6 @@
+@BTDS_HostAddress = http://localhost:5080
+
+GET {{BTDS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
