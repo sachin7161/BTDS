@@ -1,12 +1,42 @@
-﻿namespace BTDS.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BTDS.DTOs
 {
     public class CardCreateDto
     {
-       
-        public int StageId { get; set; }
-        public string Techstack { get; set; }
-        public string Tasktitle { get; set; }
-        public string Learningtopic { get; set; }
-        public int Duration { get; set; }
+        [Required]
+        public int ModuleId { get; set; }
+
+        [Required]
+        public int CardTypeId { get; set; }
+
+        [Required]
+        public int DifficultyLevelId { get; set; }
+
+        [Required]
+        [MaxLength(30)]
+        public string Code { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(300)]
+        public string Title { get; set; } = string.Empty;
+
+        public string? LearningObjective { get; set; }
+
+        public string? Description { get; set; }
+
+        public int EstimatedMinutes { get; set; } = 30;
+
+        public int SequenceNo { get; set; }
+
+        public decimal? PassingMarks { get; set; }
+
+        public decimal? MaxMarks { get; set; }
+
+        public bool IsMandatory { get; set; } = true;
+
+        public bool AllowRetake { get; set; } = true;
+
+        public bool IsActive { get; set; } = true;
     }
 }
