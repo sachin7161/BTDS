@@ -19,5 +19,10 @@ public partial class BtdsdbContext : DbContext
 
     public virtual DbSet<Gate> Gates { get; set; }
     public virtual DbSet<Module> Modules { get; set; }
+    public virtual DbSet<DifficultyLevel> DifficultyLevels { get; set; }    
+    public virtual DbSet<CardType> CardTypes { get; set; }
+    public virtual DbSet<CardTask>CardTasks { get; set; }
+    public virtual DbSet<ResourceType> ResourceTypes { get; set; }
+    public virtual DbSet<CardResource> CardResources { get; set; }
 
 }
