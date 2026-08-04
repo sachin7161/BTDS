@@ -5,6 +5,7 @@ namespace BTDS.Models
 {
     public class Card
     {
+        [Key]
         public int CardsId { get; set; }
 
         public int ModuleId { get; set; }
