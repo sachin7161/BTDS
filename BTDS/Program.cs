@@ -31,6 +31,7 @@ builder.Services.AddScoped<ICardTypeService, CardTypeService>();
 builder.Services.AddScoped<ICardTaskService,CardTaskService>(); 
 builder.Services.AddScoped<IResourceTypeService,ResourceTypeService>();
 builder.Services.AddScoped<ICardResourceService, CardResourceService>();
+builder.Services.AddScoped<ITenantService, TenantService>();
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
