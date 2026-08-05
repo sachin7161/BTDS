@@ -3,42 +3,27 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BTDS.Models
 {
-    public class Card
+    public class Module
     {
-        [Key]
-        public int CardsId { get; set; }
-
+       
         public int ModuleId { get; set; }
 
-       
-        public int CardTypeId { get; set; }
-
-      
-        public int DifficultyLevelId { get; set; }
+        public int GateId { get; set; }
 
        
         public string Code { get; set; } = string.Empty;
 
-       
-        public string Title { get; set; } = string.Empty;
-
-        public string? LearningObjective { get; set; }
+        
+        public string Name { get; set; } = string.Empty;
 
         public string? Description { get; set; }
 
-        public int EstimatedMinutes { get; set; } = 30;
-
         public int SequenceNo { get; set; }
 
-       
-        public decimal? PassingMarks { get; set; }
-
-       
-        public decimal? MaxMarks { get; set; }
+        [Column(TypeName = "decimal(6,2)")]
+        public decimal EstimatedHours { get; set; }
 
         public bool IsMandatory { get; set; } = true;
-
-        public bool AllowRetake { get; set; } = true;
 
         public bool IsActive { get; set; } = true;
 
@@ -56,7 +41,6 @@ namespace BTDS.Models
 
         public bool IsDeleted { get; set; }
 
-       
-
+        
     }
 }

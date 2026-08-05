@@ -1,4 +1,5 @@
 using Serilog;
+using Scalar.AspNetCore;
 using BTDS.Interface;
 using BTDS.Middleware;
 using BTDS.Models;
@@ -22,9 +23,14 @@ builder.Services.AddDbContext<BtdsdbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Mycon"));
 });
-builder.Services.AddScoped<IStagesService, StageServices>();
-builder.Services.AddScoped<ICardsService, CardServices>();
-
+builder.Services.AddScoped<ICardsService, CardsService>();
+builder.Services.AddScoped<IGateService, GateService>();
+builder.Services.AddScoped<IModuleService, ModuleService>();
+builder.Services.AddScoped<IDifficultyLevelService, DifficultyLevelService>();
+builder.Services.AddScoped<ICardTypeService, CardTypeService>();    
+builder.Services.AddScoped<ICardTaskService,CardTaskService>(); 
+builder.Services.AddScoped<IResourceTypeService,ResourceTypeService>();
+builder.Services.AddScoped<ICardResourceService, CardResourceService>();
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -35,9 +41,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
+    app.MapScalarApiReference(options =>
+    {
+        options.WithOpenApiRoutePattern("/swagger/v1/swagger.json");
+    });
+}
 //app.UseHttpsRedirection();
 app.UseMiddleware<ExceptionMiddleware>();
 
