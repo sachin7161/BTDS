@@ -23,5 +23,6 @@ public partial class BtdsdbContext :DbContext
     public virtual DbSet<CardTask>CardTasks { get; set; }
     public virtual DbSet<ResourceType> ResourceTypes { get; set; }
     public virtual DbSet<CardResource> CardResources { get; set; }
+    public virtual DbSet<Tenant> Tenants { get; set; }
 
 }
