@@ -17,3 +17,6 @@ obj/
 
 # Logs
 *.log
+
+.env
+Logs/
