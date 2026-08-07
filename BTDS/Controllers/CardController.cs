@@ -1,12 +1,14 @@
 ﻿using BTDS.DTOs;
 using BTDS.Interface;
 using BTDS.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BTDS.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CardController : ControllerBase
