@@ -82,7 +82,9 @@ builder.Services.AddScoped<ICardResourceService, CardResourceService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddScoped<ITenantService, TenantService>();
-
+builder.Services.AddScoped<IExamInstructionService,ExamInstrictionService>();
+builder .Services.AddScoped<IQuestionService, QuestionService>();
+builder.Services.AddScoped<IQuestionOptionService, QuestionOptionService>();
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
